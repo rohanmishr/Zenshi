@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    >
+
+    <title>Audio Converter</title>
+
+    <link rel="stylesheet" href="./style.css">
+  </head>
+
+  <body>
+    <main class="content">
+      <section class="tool-panel active">
+        <header class="tool-header">
+          <h1>Audio Converter</h1>
+
+          <p>
+            Stage YouTube links, arrange their order, set output
+            titles, and convert them to MP3.
+          </p>
+        </header>
+
+        <div class="form">
+          <div class="queue-toolbar">
+            <div>
+              <h2>Staging list</h2>
+              <p>
+                Paste a YouTube link to add a song.
+              </p>
+            </div>
+          </div>
+
+          <div class="link-entry">
+            <input
+              id="new-youtube-url"
+              type="url"
+              placeholder="https://www.youtube.com/watch?v=..."
+              autocomplete="off"
+              spellcheck="false"
+            >
+
+            <button id="add-song" type="button">
+              Add song
+            </button>
+          </div>
+
+          <p id="fetch-status"></p>
+
+          <div id="song-list" class="song-list">
+            <div class="empty-list">No songs added</div>
+          </div>
+
+          <label for="folder-name">
+            Output folder name
+          </label>
+
+          <input
+            id="folder-name"
+            type="text"
+            value="Converted Audio"
+            maxlength="80"
+          >
+
+          <div class="settings-grid">
+            <div>
+              <label for="pitch">
+                Pitch, in semitones
+              </label>
+
+              <input
+                id="pitch"
+                type="number"
+                min="-24"
+                max="24"
+                step="0.1"
+                value="4"
+              >
+            </div>
+
+            <div>
+              <label for="speed">
+                Speed percentage
+              </label>
+
+              <input
+                id="speed"
+                type="number"
+                min="25"
+                max="400"
+                step="1"
+                value="130"
+              >
+            </div>
+          </div>
+
+          <button
+            id="convert"
+            class="primary"
+            type="button"
+          >
+            Download and convert all
+          </button>
+
+          <p id="conversion-status"></p>
+        </div>
+      </section>
+    </main>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>

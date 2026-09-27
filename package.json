@@ -1,0 +1,68 @@
+{
+  "name": "Zenshi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"test\"",
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.rohan.zenshi",
+    "productName": "Zenshi",
+    "executableName": "Zenshi",
+    "directories": {
+      "buildResources": "build",
+      "output": "C:/ZenshiBuild"
+    },
+    "files": [
+      "index.js",
+      "preload.js",
+      "renderer.js",
+      "index.html",
+      "style.css",
+      "assets/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "installerHeaderIcon": "build/icon.ico",
+      "shortcutName": "Zenshi"
+    },
+    "extraResources": [
+      {
+        "from": "bin/yt-dlp.exe",
+        "to": "bin/yt-dlp.exe"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rohanmishr/Zenshi.git"
+  },
+  "author": "Rohan Mishra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rohanmishr/Zenshi/issues"
+  },
+  "homepage": "https://github.com/rohanmishr/Zenshi#readme",
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "electron": "^44.4.5",
+    "electron-builder": "^26.15.3"
+  },
+  "dependencies": {
+    "discord-rpc": "^4.0.1",
+    "ffmpeg-static": "^5.3.0",
+    "youtube-dl-exec": "^3.1.15"
+  }
+}
